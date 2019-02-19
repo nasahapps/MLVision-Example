@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MLVision" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZ3-Ly-hhw" customClass="PreviewView" customModule="MLVision" customModuleProvider="target">
+                                <rect key="frame" x="16" y="43.999999999999972" width="343" height="457.33333333333326"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PZ3-Ly-hhw" secondAttribute="height" multiplier="4:3" id="QLj-il-bsH"/>
+                                    <constraint firstAttribute="width" secondItem="PZ3-Ly-hhw" secondAttribute="height" multiplier="3:4" id="oub-zF-r5p"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QLj-il-bsH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="QLj-il-bsH"/>
+                                        <exclude reference="oub-zF-r5p"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c64-up-WqS">
+                                <rect key="frame" x="16" y="517.33333333333337" width="343" height="240.66666666666663"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c64-up-WqS" secondAttribute="bottom" constant="20" id="15V-gX-a2z">
+                                <variation key="heightClass=compact" constant="16"/>
+                            </constraint>
+                            <constraint firstItem="c64-up-WqS" firstAttribute="top" secondItem="PZ3-Ly-hhw" secondAttribute="bottom" constant="16" id="3FL-gy-x91"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PZ3-Ly-hhw" secondAttribute="trailing" id="QiG-Zb-8k4"/>
+                            <constraint firstItem="PZ3-Ly-hhw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SLS-HW-Pu8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c64-up-WqS" secondAttribute="trailing" constant="16" id="e02-8e-nYg"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="PZ3-Ly-hhw" secondAttribute="bottom" id="gD9-yT-vTS"/>
+                            <constraint firstItem="c64-up-WqS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="493.5" id="jYU-AH-B8s">
+                                <variation key="heightClass=compact" constant="16"/>
+                            </constraint>
+                            <constraint firstItem="c64-up-WqS" firstAttribute="leading" secondItem="PZ3-Ly-hhw" secondAttribute="trailing" constant="16" id="kv5-aC-vPP"/>
+                            <constraint firstItem="c64-up-WqS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lr7-Wa-gDh"/>
+                            <constraint firstItem="PZ3-Ly-hhw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="wJR-pa-9nk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gD9-yT-vTS"/>
+                                <exclude reference="jYU-AH-B8s"/>
+                                <exclude reference="kv5-aC-vPP"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="QiG-Zb-8k4"/>
+                                <include reference="gD9-yT-vTS"/>
+                                <exclude reference="3FL-gy-x91"/>
+                                <include reference="jYU-AH-B8s"/>
+                                <include reference="kv5-aC-vPP"/>
+                                <exclude reference="lr7-Wa-gDh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="logTextView" destination="c64-up-WqS" id="iT2-1t-0qw"/>
+                        <outlet property="previewView" destination="PZ3-Ly-hhw" id="xR6-x4-RTu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
